@@ -41,7 +41,7 @@ MVVM
 
 ابتدا یک تصویر که از لینک بالا برداشتیم را به شما نشان می‌دهیم. این عکس به طور خلاصه دو framework را با هم مقایسه کرده است: 
 
-<img src="./Angular_React_comparison.png" style="display: block;margin-left: auto;margin-right: auto;width: 75%;">
+<img src="./Angular_React_comparison.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
 
 
 حال به طور خلاصه این دو را با هم مقایسه می‌کنیم:
