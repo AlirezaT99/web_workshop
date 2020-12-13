@@ -1,6 +1,6 @@
 <div dir="rtl">
 
-## single page application (SPA)
+## Single Page Application (SPA)
 
 SPA
 به چه معناست؟ SPA
