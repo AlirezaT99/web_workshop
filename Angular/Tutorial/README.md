@@ -54,6 +54,7 @@ ng serve
 </div>
 
 حال مرورگر خود را باز کنید و به آدرس localhost:4200 بروید و اولین پروژه انگولار خود را نظاره کنید!
+<br>
 <img src="https://github.com/AlirezaT99/web_workshop/blob/feature/tutorial/Angular/Tutorial/images/default-project.png"/>
 
 
