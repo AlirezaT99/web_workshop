@@ -9,9 +9,7 @@
   - ماژول‌ها، کامپوننت‌ها و سرویس‌ها
   - کار با کامپوننت‌ها
   - مرتب کردن قطعه‌های پازل!
-  -
-  -
-  - ان جی فور و این داستانا
+  - امکانات ویژه در طراحی
   - منابع
 
 ## نصب و راه‌اندازی
@@ -39,7 +37,7 @@ ng new first-project
 پس از وارد کردن این دستور چند سوال از شما پرسیده می‌شود. اولی روتینگ در پروژه است که در ادامه به آن خواهیم پرداخت. <br>
 دومی فرمت stylesheetهای پروژه است. در قسمت اول بهتر است، yes وارد کنید و در قسمت دوم از scss (sassy css) استفاده کنید.
 برای مقایسه‌ی css و scss می‌توانید از
-<a href="https://techprimelab.com/scss-or-css-which-is-better-find-out-here/#:~:text=SCSS%20is%20a%20special%20type,like%20CSS%20with%20better%20formatting.&text=Being%20an%20extension%20of%20CSS3,%2C%20selector%20inheritance%2C%20and%20more.">
+<a target="_blank" href="https://techprimelab.com/scss-or-css-which-is-better-find-out-here/#:~:text=SCSS%20is%20a%20special%20type,like%20CSS%20with%20better%20formatting.&text=Being%20an%20extension%20of%20CSS3,%2C%20selector%20inheritance%2C%20and%20more.">
 این لینک
 </a>
 استفاده کنید.
@@ -168,10 +166,12 @@ ng generate component my-component
 </html>
 ```
 </div>
+
 به body توجه کنید. تگ app-root به برنامه می‌گوید که محتویات app.component.html را اینجا نمایش دهد...
 الان در فایل مذکور، کد طراحی همان صفحه‌ی اصلی که بالاتر دیدیم وجود دارد.
 <br>
 اما فرض کنید برنامه‌ای داریم که یک navbar همیشه بالای صفحه‌اش دارد و محتوای پس از آن با توجه به مسیری که قرار داریم پر می‌شود. در این صورت فایل app.component.html ما می‌تواند اینگونه باشد:
+
 <div dir="ltr">
 
 ```html
@@ -179,13 +179,37 @@ ng generate component my-component
 <router-outlet></router-outlet>
 ```
 </div>
-که در آن app-nav-menu، سلکتور کامپوننتی است که برای navbar ساخته ایم
+که در آن app-nav-menu، سلکتور کامپوننتی است که برای navbar ساخته‌ایم
 
-## عنوان
+## امکانات ویژه در طراحی
+اکنون که با کلیات طراحی پروژه در این فریمورک آشنا شدیم خوب است با امکاناتی که برای نیازهای رایج درنظر گرفته شده است نیز اندکی آشنا شویم:
+### Structural directives
+  - <b>بررسی شرط با *ngIf:</b> فرض کنید می‌خواهیم در صورت برقرار بودن یا نبودن یک شرط خاص رفتار متفاوتی در نمایش محتوا داشته باشیم. در مثال زیر با کمک ngIf می‌توانیم بدون نیاز به کد اضافه و صرفاً با بیان شرط (یا متغیر) این منطق را پیاده‌سازی کنیم:
+<br>
 
+<div dir="ltr">
+
+```typescript
+<div *ngIf="ali.age >= 18">Ali is {{ali.age}} years old and can drive a car!</div>
+```
+</div>
+
+  - <b>اجرای حلقه با *ngFor:</b> بعنوان مثال فرض کنید جایی نیاز داریم تا تمام عناصر یک لیست را در یک قالب خاص نشان دهیم، اینجا می‌توانیم به راحتی با استفاده از ngFor نیاز خود را رفع کنیم:
+  
+<div dir="ltr">
+
+```typescript
+<li *ngFor="let student of students">{{student.name}}</li>
+```
+</div>
+برای آشنایی بیشتر با این موارد (مانند ngSwitch که عملکرد switch-case را پیاده‌سازی می‌کند) می‌توانید به
+<a target="_blank" href="https://angular.io/guide/structural-directives">
+این صفحه
+</a>
+مراجعه کنید.
 
 ## منابع
-
-
+  - angular.io
+  - دو بخش _ایجاد پروژه_ و _معرفی ماژول‌ها_ با بهره گیری از مستندات آکادمی ستاره.
 
 </div>
