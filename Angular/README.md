@@ -1,16 +1,12 @@
 <div dir="rtl">
 
-<p align='center'>
-
 ## Angular انگولار
 
-</p>
+<p align=center><img width=300 src="./Introduction/images/Angular-logo.png" /></p>
 
 ### فهرست📝
   - [آشنایی با مفاهیم مقدماتی](./Introduction)
   - [آموزش گام به گام فریم‌ورک](./Tutorial)
-
-<p align=center><img src="./Introduction/images/Angular-logo.png" /></p>
 
 ### نویسندگان✍️
   - علیرضا تاجمیرریاحی
