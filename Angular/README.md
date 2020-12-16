@@ -6,7 +6,7 @@
   - [آشنایی با مفاهیم مقدماتی](./Introduction)
   - [آموزش گام به گام فریم‌ورک](./Tutorial)
 
-<img src="./Introduction/Angular-logo.png" />
+<p align=center><img src="./Introduction/images/Angular-logo.png" /></p>
 
 ### نویسندگان✍️
   - علیرضا تاجمیرریاحی
