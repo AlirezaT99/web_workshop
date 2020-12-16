@@ -11,6 +11,6 @@
   - سپهر صفری
   - پرهام صارمی
 
-<p align=center><img width=300 src="./Introduction/images/Angular-logo.png" /></p>
+<p align=center><img width=500 src="./Introduction/images/Angular-logo.png" /></p>
 
 </div>
