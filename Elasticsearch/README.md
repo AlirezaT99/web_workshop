@@ -412,7 +412,9 @@ GET /sample-posts/_mapping
   </div>
   <br>  
 
-<br>
+برای آشنایی بیشتر با انواع Queryهای Elasticsearch مطالعه‌ی
+[این لینک](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html)
+می‌تواند بسیار مفید باشد.
 
 > همچنین با نوشتن `_count` بجای `_search` می‌توان تعداد اسناد نتیجه را در هر کوئری بدست آورد. (بدون نیاز به گرفتن خود نتایج)
 
