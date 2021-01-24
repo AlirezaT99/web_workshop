@@ -28,6 +28,10 @@
   - [پرهام صارمی](https://github.com/parhamsaremi)
 <hr>
 
+## مقدمه
+
+## ...
+
 <p align=center><img width=600 src="./assets/elasticsearch-logo.png" /></p>
 
 ## نصب و راه‌اندازی
@@ -74,4 +78,16 @@ http://localhost:5601
 (ساختن index می‌تواند دارای تنظیماتی مانند مشخص کردن mapping  باشد که در
 [این لینک](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html)
 به آن بیشتر پرداخته شده. همچنین اسم index باید ویژگی‌هایی مانند lowercase بودن یا نداشتن کاراکترهای ویژه دارد که مطالعه‌ی همین لینک می‌تواند برای آن مفید باشد).
+
+```http
+PUT /sample-posts
+```
+خروجی:
+```json
+{
+  "acknowledged" : true,
+  "shards_acknowledged" : true,
+  "index" : "sample-posts"
+}
+```
 </div>
