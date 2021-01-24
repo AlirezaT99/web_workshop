@@ -56,7 +56,10 @@
   curl http://localhost:9200/
   ```
 </div>
-
 می‌توانید از اجرا شدن آن مطمئن شوید.
-
+<br>
+همچنین kibana بطور پیش‌فرض روی پورت 5601 اجرا می‌شود و با رفتن به
+http://localhost:5601
+با صفحه‌ی زیر مواجه خواهید شد:
+<p align=center><img src="./assets/kibana-homepage.png" /></p>
 </div>
