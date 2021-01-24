@@ -271,7 +271,7 @@ GET /sample-posts/_mapping
 می‌تواند مفید باشد.
 <br>
 
-همچنین برای مشاهده‌ی سایر انواع داده در Field ها (متن، عدد و ...) می‌توانید
+همچنین برای مشاهده‌ی سایر انواع داده در Field ها (علاوه بر متن، عدد و ...) می‌توانید
 [اینجا](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.html)
 را مطالعه کنید.
 </div>
