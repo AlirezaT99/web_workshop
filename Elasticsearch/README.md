@@ -365,6 +365,27 @@ GET /sample-posts/_mapping
   ```http
   GET /sample-posts/_search
   {
+    "query": {
+      "bool": {
+        "must": [
+          {
+            "match": {
+              "title": {
+                "query": "quis",
+                "fuzziness": 1
+              }
+            }
+          }
+        ],
+        "must_not": [
+          {
+            "match": {
+              "userId": 2
+            }
+          }
+        ]
+      }
+    }
   }
   ```
   </div>
