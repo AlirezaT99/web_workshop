@@ -319,7 +319,7 @@ GET /sample-posts/_mapping
   </div>
   <br>
     
-  - Range Query: برای مثال اگر بخواهیم پست‌هایی که id آنها بین 1 و 5 است را مشاهده کنیم...:
+  - Range Query: برای مثال اگر بخواهیم پست‌هایی که userId آنها بین 1 و 5 است را مشاهده کنیم...:
   <div dir="ltr">
 
   ```http
@@ -337,8 +337,6 @@ GET /sample-posts/_mapping
   ```
   </div>
   <br>
-    
-  - Term Query:
     
 
 </div>
