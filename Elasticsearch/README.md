@@ -283,6 +283,7 @@ GET /sample-posts/_mapping
 [(لینک)](https://jsonplaceholder.typicode.com/posts)
   - کوئری‌هایی که دنبال مقدار خاصی در فیلد خاصی می‌گردند؛ مانند:
     - Match Query: در مثال زیر دنبال اسنادی می‌گردیم که در body آنها کلیدواژه‌ی `quis` یافت شود (و 5 سند پیدا می‌کند)
+    
     <div dir="ltr">
  
     ```http
