@@ -129,17 +129,47 @@ nostrum rerum est autem sunt rem eveniet architecto"""
 GET /sample-posts/_search
 ```
 </div>
-در مثالی که تا اینجا زدیم خروجی این درخواست مطابق زیر می‌باشد. (پیشنهاد می‌شود که به فیلدهای مختلف این آبجکت توجه کنید)
+در مثالی که تا اینجا زدیم خروجی این درخواست مطابق زیر می‌باشد. (پیشنهاد می‌شود به فیلدهای مختلف این آبجکت توجه کنید)
 <br>
 
 <div dir="ltr">
  
 ```json
 {
-  "acknowledged" : true,
-  "shards_acknowledged" : true,
-  "index" : "sample-posts"
+  "took" : 1,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 1,
+      "relation" : "eq"
+    },
+    "max_score" : 1.0,
+    "hits" : [
+      {
+        "_index" : "sample-posts",
+        "_type" : "_doc",
+        "_id" : "e2SXNHcBDoguw2pBYCpS",
+        "_score" : 1.0,
+        "_source" : {
+          "userId" : 1,
+          "id" : 1,
+          "title" : "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+          "body" : """quia et suscipit
+suscipit recusandae consequuntur expedita et cum
+reprehenderit molestiae ut ut quas totam
+nostrum rerum est autem sunt rem eveniet architecto"""
+        }
+      }
+    ]
+  }
 }
+
 ```
 </div>
 خب
