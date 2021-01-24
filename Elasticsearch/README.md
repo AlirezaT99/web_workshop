@@ -2,7 +2,7 @@
 
 ## Elasticsearch
 
-<p align=center><img width=600 src="./assets/elasticsearch-logo.png" /></p>
+<p align=center><img width=300 src="./assets/Elastic_logo_main.png" /></p>
 
 ### 📝فهرست
   - مقدمه
@@ -27,6 +27,8 @@
   - [سپهر صفری](https://github.com/sepehrs1378)
   - [پرهام صارمی](https://github.com/parhamsaremi)
 <hr>
+
+<p align=center><img width=600 src="./assets/elasticsearch-logo.png" /></p>
 
 ## نصب و راه‌اندازی
 در این بخش به بررسی نحوه‌ی راه‌اندازی elasticsearchو kibana خواهیم پرداخت.
@@ -54,7 +56,13 @@
   curl http://localhost:9200/
   ```
 </div>
-
 می‌توانید از اجرا شدن آن مطمئن شوید.
-
+<br>
+همچنین kibana بطور پیش‌فرض روی پورت 5601 اجرا می‌شود و با رفتن به
+http://localhost:5601
+با صفحه‌ی زیر مواجه خواهید شد:
+<br>
+<p align=center><img src="./assets/kibana-homepage.png" /></p>
+<br>
+اکنون می‌توانید از منوی سمت چپ صفحه در قسمت management وارد Dev Tools شوید تا به قسمت بعدی بپردازیم :)
 </div>
