@@ -120,4 +120,27 @@ nostrum rerum est autem sunt rem eveniet architecto"""
 > داده‌ی این قسمت از
 [این API](https://jsonplaceholder.typicode.com/posts)
 گرفته شده است.
+<br>
+حال برای مشاهده‌ی کل اسناد داخل شاخص، از دستور زیر استفاده کنید:
+
+<div dir="ltr">
+ 
+```http
+GET /sample-posts/_search
+```
+</div>
+در مثالی که تا اینجا زدیم خروجی این درخواست مطابق زیر می‌باشد. (پیشنهاد می‌شود که به فیلدهای مختلف این آبجکت توجه کنید)
+<br>
+
+<div dir="ltr">
+ 
+```json
+{
+  "acknowledged" : true,
+  "shards_acknowledged" : true,
+  "index" : "sample-posts"
+}
+```
+</div>
+خب
 </div>
