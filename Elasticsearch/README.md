@@ -64,5 +64,14 @@ http://localhost:5601
 <br>
 <p align=center><img src="./assets/kibana-homepage.png" /></p>
 <br>
-اکنون می‌توانید از منوی سمت چپ صفحه در قسمت management وارد Dev Tools شوید تا به قسمت بعدی بپردازیم :)
+اکنون می‌توانید از منوی سمت چپ صفحه در قسمت management وارد Dev Tools شوید. محیط Dev Tools مطابق عکس زیر می باشد:
+<br>
+<p align=center><img src="./assets/devtools.png" /></p>
+
+## بارگذاری اسناد
+اکنون در Dev Tools با اجرای درخواست زیر می‌توانیم اولین index خود را بسازیم.
+<br>
+ساختن index می‌تواند دارای تنظیماتی مانند مشخص کردن mapping  باشد که در
+[این لینک](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html)
+به آن بیشتر پرداخته شده. همچنین اسم index باید ویژگی‌هایی مانند lowercase بودن یا نداشتن کاراکترهای ویژه دارد که مطالعه‌ی همین لینک می‌تواند برای آن مفید باشد.
 </div>
