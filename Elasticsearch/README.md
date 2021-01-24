@@ -175,7 +175,7 @@ nostrum rerum est autem sunt rem eveniet architecto"""
 حال آماده‌ایم تا با نحوه‌ی پیاده‌سازی انواع Query بیشتر آشنا شویم اما پیش از آن خوب است گریزی به مبحث mapping بزنیم.
 
 ## گریزی به مبحث Mapping
-تا اینجا دو بار از mapping اسم برده‌ایم اما هنوز دقیقی از آن ارائه نکرده‌ایم:
+تا اینجا دو بار از mapping اسم برده‌ایم اما هنوز تعریف دقیقی از آن ارائه نکرده‌ایم:
 <br>
 در هر Index
 سندها قالب مشخصی دارند که به این قالب Mapping
@@ -234,6 +234,34 @@ GET /sample-posts/_mapping
     }
   }
 }
+
+```
+</div>
+با توصیفی که در ابتدای بخش بیان کردیم، اکنون می‌توانید بخش‌های مختلف پاسخ را بهتر درک کنید.
+<br>
+علت بیان این مبحث در این قسمت از آموزش این بود که این نکته را متذکر شویم که بعد از ایجاد اولین سند و شکل گرفتن Mapping، امکان ایجاد سند دیگری که مغایر با این Mapping باشد وجود ندارد. برای مثال اگر در سند دیگری در فیلد userId که از نوع long شناسایی شده مقدار رشته‌ای وارد کنیم، با خطای Bad Request (400) مواجه خواهیم شد که دارای ساختار زیر است:
+
+<div dir="ltr">
+ 
+```json
+{
+  "error" : {
+    "root_cause" : [
+      {
+        "type" : "mapper_parsing_exception",
+        "reason" : "failed to parse field [userId] of type [long] in document with id 'TmTTNHcBDoguw2pB9TRm'. Preview of field's value: 'salam'"
+      }
+    ],
+    "type" : "mapper_parsing_exception",
+    "reason" : "failed to parse field [userId] of type [long] in document with id 'TmTTNHcBDoguw2pB9TRm'. Preview of field's value: 'salam'",
+    "caused_by" : {
+      "type" : "illegal_argument_exception",
+      "reason" : "For input string: \"salam\""
+    }
+  },
+  "status" : 400
+}
+
 
 ```
 </div>
