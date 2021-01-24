@@ -338,5 +338,36 @@ GET /sample-posts/_mapping
   </div>
   <br>
     
+  - Multi-Match Query: اگر بخواهیم دنبال همان کلیدواژه در بیش از یک field مشخص بگردیم از این نوع جستار استفاده می‌کنیم:
+  <div dir="ltr">
+
+  ```http
+  GET /sample-posts/_search
+  {
+    "query": {
+      "multi_match": {
+        "query": "quis",
+        "fields": [
+          "title",
+          "body"
+        ],
+        "fuzziness": 1
+      }
+    }
+  }
+  ```
+  </div>
+  <br>
+    
+  - Bool Query: با استفاده از این نوع جستار می‌توان با سایر کوئری‌ها یک ترکیب منطقی از آنان را جستجو کرد: 
+  <div dir="ltr">
+
+  ```http
+  GET /sample-posts/_search
+  {
+  }
+  ```
+  </div>
+  <br>  
 
 </div>
