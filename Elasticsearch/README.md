@@ -265,13 +265,13 @@ GET /sample-posts/_mapping
 
 ```
 </div>
-برای مطالعه‌ی بیشتر در مورد mapping ها 
 
+برای مطالعه‌ی بیشتر در مورد mapping ها 
 [این لینک](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html)
 می‌تواند مفید باشد.
 <br>
-همچنین برای مشاهده‌ی سایر انواع داده در Field ها (متن، عدد و ...) می‌توانید
 
+همچنین برای مشاهده‌ی سایر انواع داده در Field ها (متن، عدد و ...) می‌توانید
 [اینجا](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.html)
 را مطالعه کنید.
 </div>
