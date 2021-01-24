@@ -79,10 +79,16 @@ http://localhost:5601
 [این لینک](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html)
 به آن بیشتر پرداخته شده. همچنین اسم index باید ویژگی‌هایی مانند lowercase بودن یا نداشتن کاراکترهای ویژه دارد که مطالعه‌ی همین لینک می‌تواند برای آن مفید باشد).
 
+<div dir="ltr">
+ 
 ```http
 PUT /sample-posts
 ```
+</div>
 خروجی:
+
+<div dir="ltr">
+ 
 ```json
 {
   "acknowledged" : true,
@@ -90,4 +96,6 @@ PUT /sample-posts
   "index" : "sample-posts"
 }
 ```
+</div>
+
 </div>
