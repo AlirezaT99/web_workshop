@@ -198,4 +198,44 @@ GET /sample-posts/_mapping
 ```
 </div>
 خروجی مطابق زیر می‌باشد.
+
+<div dir="ltr">
+ 
+```json
+{
+  "sample-posts" : {
+    "mappings" : {
+      "properties" : {
+        "body" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "id" : {
+          "type" : "long"
+        },
+        "title" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "userId" : {
+          "type" : "long"
+        }
+      }
+    }
+  }
+}
+
+```
+</div>
+
 </div>
