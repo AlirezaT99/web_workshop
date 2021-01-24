@@ -281,45 +281,46 @@ GET /sample-posts/_mapping
 <br>
 مثال‌های مطرح شده با توجه به 10 سند اول اسنادی است که در قسمت بارگذاری معرفی کردیم.
 [(لینک)](https://jsonplaceholder.typicode.com/posts)
-  - کوئری‌هایی که دنبال مقدار خاصی در فیلد خاصی می‌گردند؛ مانند:
-    - Match Query: در مثال زیر دنبال اسنادی می‌گردیم که در body آنها کلیدواژه‌ی `quis` یافت شود (و 5 سند پیدا می‌کند)
+<br>
+کوئری‌هایی که دنبال مقدار خاصی در فیلد خاصی می‌گردند؛ مانند:
+  - Match Query: در مثال زیر دنبال اسنادی می‌گردیم که در body آنها کلیدواژه‌ی `quis` یافت شود (و 5 سند پیدا می‌کند)
     
-    <div dir="ltr">
- 
-    ```http
-    GET /sample-posts/_search
-    {
-      "query": {
-        "match": {
-          "body": "quis"
+  <div dir="ltr">
+
+  ```http
+  GET /sample-posts/_search
+  {
+    "query": {
+      "match": {
+        "body": "quis"
+      }
+    }
+  }
+  ```
+  </div>
+  <br>
+    
+  - Fuzzy Query: حال می‌خواهیم کلماتی را که 1 کاراکتر با کلیدواژه‌ی ما تفاوت دارد هم گزارش شود (مانند `quas`). اینجا جستارهای فاز به کمک ما می‌آیند:
+  <div dir="ltr">
+
+  ```http
+  GET /sample-posts/_search
+  {
+    "query": {
+      "match": {
+        "body": {
+          "query": "quis",
+          "fuzziness": 1
         }
       }
     }
-    ```
-    </div>
-    <br>
+  }
+  ```
+  </div>
+  <br>
     
-    - Fuzzy Query: حال می‌خواهیم کلماتی را که 1 کاراکتر با کلیدواژه‌ی ما تفاوت دارد هم گزارش شود (مانند `quas`). اینجا جستارهای فاز به کمک ما می‌آیند:
-    <div dir="ltr">
-  
-    ```http
-    GET /sample-posts/_search
-    {
-      "query": {
-        "match": {
-          "body": {
-            "query": "quis",
-            "fuzziness": 1
-          }
-        }
-      }
-    }
-    ```
-    </div>
-    <br>
-    
-    - Range Query:
-    - Term Query:
+  - Range Query:
+  - Term Query:
     
 
 </div>
