@@ -2,7 +2,7 @@
 
 ## Elasticsearch
 
-<p align=center><img width=600 src="./assets/elasticsearch-logo.png" /></p>
+<p align=center><img width=300 src="./assets/Elastic_logo_main.png" /></p>
 
 ### 📝فهرست
   - مقدمه
@@ -27,6 +27,8 @@
   - [سپهر صفری](https://github.com/sepehrs1378)
   - [پرهام صارمی](https://github.com/parhamsaremi)
 <hr>
+
+<p align=center><img width=600 src="./assets/elasticsearch-logo.png" /></p>
 
 ## نصب و راه‌اندازی
 در این بخش به بررسی نحوه‌ی راه‌اندازی elasticsearchو kibana خواهیم پرداخت.
