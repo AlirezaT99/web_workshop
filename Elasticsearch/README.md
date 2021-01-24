@@ -61,5 +61,8 @@
 همچنین kibana بطور پیش‌فرض روی پورت 5601 اجرا می‌شود و با رفتن به
 http://localhost:5601
 با صفحه‌ی زیر مواجه خواهید شد:
+<br>
 <p align=center><img src="./assets/kibana-homepage.png" /></p>
+<br>
+اکنون می‌توانید از منوی سمت چپ صفحه در قسمت management وارد Dev Tools شوید تا به قسمت بعدی بپردازیم :)
 </div>
