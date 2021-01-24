@@ -316,6 +316,7 @@ GET /sample-posts/_mapping
     ```
     </div>
     <br>
+    
     - Range Query:
     - Term Query:
     
