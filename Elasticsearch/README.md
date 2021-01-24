@@ -26,5 +26,23 @@
   - [علیرضا تاجمیرریاحی](https://github.com/AlirezaT99)
   - [سپهر صفری](https://github.com/sepehrs1378)
   - [پرهام صارمی](https://github.com/parhamsaremi)
+<hr>
 
+## نصب و راه‌اندازی
+در این بخش به بررسی نحوه‌ی راه‌اندازی elasticsearchو kibana خواهیم پرداخت.
+<br>
+ابتدا از
+[اینجا](https://www.elastic.co/downloads/elasticsearch)
+و
+[اینجا](https://www.elastic.co/downloads/kibana)
+الستیک‌سرچ و کیبانا را نصب کنید. (یا از طریق apt و yum)
+<br>
+حال با اجرای
+`bin/elasticsearch`
+(یا `bin\elasticsearch.bat` در ویندوز) الستیک‌سرچ را اجرا کنید.
+<br>
+همچنین با اجرای
+`bin/kibana`
+(یا `bin\kibana.bat` در ویندوز) کیبانا اجرا می‌شود.
+>> تجربه: اگر روی ویندوز هستید بررسی کنید اسم فولدر حاوی فایل‌ها دارای اسپیس نباشد :|
 </div>
