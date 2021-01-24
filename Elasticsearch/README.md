@@ -115,5 +115,9 @@ nostrum rerum est autem sunt rem eveniet architecto"""
 ```
 </div>
 در عکس dev tools در قسمت قبل می‌توانید response مربوط به درخواست فوق (بدنه و زمان و کد) را مشاهده کنید :)
+<br>
 
+> داده‌ی این قسمت از
+[این API](https://jsonplaceholder.typicode.com/posts)
+گرفته شده است.
 </div>
