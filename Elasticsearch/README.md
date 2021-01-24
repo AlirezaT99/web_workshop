@@ -369,6 +369,27 @@ GET /sample-posts/_mapping
   ```
   </div>
   <br>  
+    
+  - Aggregation Query: کوئری‌های تجمیعی مبحث بزرگ و پیچیده‌ای است که در اینجا به یک مثال اکتفا می‌کنیم. برای مطالعه‌ی بیشتر به
+  [اینجا](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html)
+  مراجعه کنید. با این مثال تعداد پست‌هایی که از هر کاربر وجود دارد را می‌توان بدست آورد:
+  <div dir="ltr">
+
+  ```http
+  GET /sample-posts/_search
+  {
+    "aggs": {
+      "users": {
+        "terms": {
+          "field": "userId"
+        }
+      }
+    },
+    "size": 0
+  }
+  ```
+  </div>
+  <br>  
 
 <br>
 
