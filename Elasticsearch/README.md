@@ -300,7 +300,7 @@ GET /sample-posts/_mapping
   </div>
   <br>
     
-  - Fuzzy Query: حال می‌خواهیم کلماتی را که 1 کاراکتر با کلیدواژه‌ی ما تفاوت دارد هم گزارش شود (مانند `quas`). اینجا جستارهای فاز به کمک ما می‌آیند:
+  - Fuzzy Query: حال می‌خواهیم کلماتی را که 1 کاراکتر با کلیدواژه‌ی ما تفاوت دارد هم گزارش شود (مانند `quas`). اینجا جستارهای فازی به کمک ما می‌آیند:
   <div dir="ltr">
 
   ```http
@@ -319,7 +319,25 @@ GET /sample-posts/_mapping
   </div>
   <br>
     
-  - Range Query:
+  - Range Query: برای مثال اگر بخواهیم پست‌هایی که id آنها بین 1 و 5 است را مشاهده کنیم...:
+  <div dir="ltr">
+
+  ```http
+  GET /sample-posts/_search
+  {
+    "query": {
+      "range": {
+        "userId": {
+          "gte": 1,
+          "lte": 5
+        }
+      }
+    }
+  }
+  ```
+  </div>
+  <br>
+    
   - Term Query:
     
 
