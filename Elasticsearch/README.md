@@ -447,8 +447,63 @@ GET /sample-posts/_mapping
 
 > همچنین با نوشتن `_count` بجای `_search` می‌توان تعداد اسناد نتیجه را در هر کوئری بدست آورد. (بدون نیاز به گرفتن خود نتایج)
 
+## Bulk API
+می‌توان به کمک Bulk API،
+چندین query
+از نوع index، create، delete و update 
+را در یک request برای سرور ارسال کرد.
+این کار overhead کلی را کم‌تر می‌کند.
+چرا که فرستادن یک درخواست نسبتا سنگین، از فرستادن تعداد زیادی درخواست سبک، در این مورد فشار کم‌تری به سرور می‌آورد.
+یک نمونه از Bulk API در زیر آورده شده است:
+
+  <div dir="ltr">
+
+  ```http
+  POST _bulk
+  { "index" : { "_index" : "test", "_id" : "1" } }
+  { "field1" : "value1" }
+  { "delete" : { "_index" : "test", "_id" : "2" } }
+  { "create" : { "_index" : "test", "_id" : "3" } }
+  { "field1" : "value3" }
+  { "update" : {"_id" : "1", "_index" : "test"} }
+  { "doc" : {"field2" : "value2"} }
+  ```
+  </div>
+  <br>  
+
+طرز کار این api
+نیز این‌ گونه است که در هر خط نوع qeury و متاداده (meta data)
+آن را وارد می‌کنیم و در خط بعدی، در صورت نیاز اطلاعات جدید را می‌نویسیم. مانند زیر:
+
+<div dir="ltr">
+
+  ```
+  action_and_meta_data \n
+  optional_source \n
+  action_and_meta_data \n
+  optional_source \n
+  ....
+  action_and_meta_data \n
+  optional_source \n
+  ```
+  </div>
+  <br>  
+
+مثلا در مثالی که آورده شده، این طور هست که در خط اول یک query از نوع index داریم
+که هم index آن را معلوم کرده ایم و هم  
+id را.
+در خط بعدی field1
+که مربوط به document
+تولید شده هست را مشخص کرده‌ایم. سپس در خط سوم یک query از نوع delete داریم
+که مانند index، متاداده آن را در همان خط مشخص کردیم.
+دقت شود که برای delete در خط بعدی آن لازم نیست چیزی بنویسیم.
+بقیه query ها هم به طور مشابه نوشته شده‌اند.
+برای مطالعه بیش‌تر Bulk API می‌توانید
+[این جا](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html)
+را بخوانید.
+
 ## منابع
   - Elasticsearch Documentation
   - مستندات آکادمی ستاره
-
+  - [dzone.com](https://dzone.com/articles/elastic-search-advantages-case-studies-amp-books)
 </div>
