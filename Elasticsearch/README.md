@@ -321,6 +321,167 @@ GET /sample-posts/_mapping
 [اینجا](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.html)
 را مطالعه کنید.
 
+## Dynamic Mapping
+یکی از مهم‌ترین ویژگی‌های Elasticsearch این است که برای index کردن یک document نیازی نیست که حتما اول index ساخته شود و نوع نگاشت تعریف شود و قیلد‌ها معرفی شوند. می‌توان مستقیم document را index کرد تا نوع نگاشت و فیلد‌ها و index به صورت اتوماتیک ساخته شوند. 
+### Dynamic Field Mapping
+به صورت پیشفرض زمانی که یک فیلد جدید که قبلا دیده نشده در document وجود دارد، Elasticsearch این فیلد را به نگاشت typeها اضافه می‌کند. این رفتار می‌تواند با `false` کردن مقدار فیلد dynamic غیر فعال شود. لازم به ذکر است با انجام دادن این کار فیلد‌های جدید چشم‌پوشی می‌شوند و به نگاشت اضافه نمی‌شوند. همچنین می‌توان مقدار این فیلد را برابر با `strict` قرار داد تا در صورت مشاهده‌ی فیلد جدید با ارور مواجه شویم.
+<br>
+با فرض اینکه این فیلد فعال می‌باشد بر اساس جدول زیر تصمیم گرفته می‌شود:
+<div class="informaltable" dir="ltr">
+<table border="0" cellpadding="4px">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody valign="top">
+<tr>
+<td valign="top">
+<p>
+<span class="strong strong"><strong>JSON data type</strong></span>
+</p>
+</td>
+<td valign="top">
+<p>
+<span class="strong strong"><strong>Elasticsearch data type</strong></span>
+</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p>
+<code class="literal">null</code>
+</p>
+</td>
+<td valign="top">
+<p>
+No field is added.
+</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p>
+<code class="literal">true</code> or <code class="literal">false</code>
+</p>
+</td>
+<td valign="top">
+<p>
+<code class="literal">boolean</code> field
+</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p>
+floating&nbsp;point&nbsp;number
+</p>
+</td>
+<td valign="top">
+<p>
+<code class="literal">float</code> field
+</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p>
+integer
+</p>
+</td>
+<td valign="top">
+<p>
+<code class="literal">long</code> field
+</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p>
+object
+</p>
+</td>
+<td valign="top">
+<p>
+<code class="literal">object</code> field
+</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p>
+array
+</p>
+</td>
+<td valign="top">
+<p>
+Depends on the first non-<code class="literal">null</code> value in the array.
+</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p>
+string
+</p>
+</td>
+<td valign="top">
+<p>
+Either a <code class="literal">date</code> field
+    (if the value passes date detection),
+a <code class="literal">double</code> or <code class="literal">long</code> field
+    (if the value passes numeric detection)
+or a <code class="literal">text</code> field, with a <code class="literal">keyword</code> sub-field.
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+بجز این فیلد‌ها بقیه نوع بقیه باید دقیقا مشخص شود زیرا به اگر جزو این‌ها نباشند به صورت خودکار مشخص نمی‌شوند. می‌توان با استفاده از dynamic templates این ویژگی را شخصی‌سازی کرد و ویژگی‌هایی به آن اضافه کرد.
+
+#### Date Detection
+با فعال کرد فیلد `date_detection` می‌توان آنگاه فیلد‌های رشته‌ای یک دور چک میشوند تا فهمیده شود که آن فیلد تاریخ است یا نه و فرمت‌های قابل قبول برای اینکه یک رشته تاریخ باشد در `dynamic_date_formats` ذخیره شده است که مقدار آن به صورت پیش‌فرض برابر با [ "strict_date_optional_time","yyyy/MM/dd HH:mm:ss Z||yyyy/MM/dd Z"] است. با قرار دادن مقدار `false` برای فیلد date_detection می‌توان این ویژگی را غیرفعال کرد.
+<div dir="ltr">
+
+```http
+PUT my-index-000001
+{
+  "mappings": {
+    "date_detection": false
+  }
+}
+
+PUT my-index-000001/_doc/1 
+{
+  "create": "2015/09/02"
+}
+```
+
+</div>
+
+که در اینجا برای فیلد `create` مقدار به صورت `text` ذخیره شده است. همچنین با قطعه کد زیر می‌توان مقدار پیش‌فرض برای dynamic_date_formats را تغییر داد.
+
+<div dir="ltr">
+
+```http
+PUT my-index-000001
+{
+  "mappings": {
+    "dynamic_date_formats": ["MM/dd/yyyy"]
+  }
+}
+
+PUT my-index-000001/_doc/1
+{
+  "create_date": "09/25/2015"
+}
+```
+</div>
+
+#### Numeric Detection
+
+اگر این مورد فعال باشد در صورتی که یک عدد به صورت رشته‌ای در document قرار داشته باشد این فیلد به صورت اتوماتیک تبدیل می‌شود البته راه درست این است که از دستی برای فیلد مشخص کنیم که باید تبدیل به عدد شود و این کار اتوماتیک انجام نشود.
+
 ## انواع مختلف Query
 
 در این بخش با ارائه‌ی چند مثال، با امکانات گسترده‌ی Elasticsearch در ارتباط با بازیابی اسناد بیشتر آشنا می‌شویم.
