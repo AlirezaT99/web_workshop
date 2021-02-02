@@ -688,9 +688,6 @@ id را.
 را بخوانید.
 
 ## آنالیز متن
-برای مطالعه بیش‌تر می‌توانید به 
-[این جا](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-overview.html)
- مراجعه کنید.
 
  به طور کلی، بدین معناست که می‌خواهید در یک متن، دنبال خود یک عبارت یا عبارتی شبیه به آن (از نظر معنایی یا نوشتاری یا ...) بگردید.
 مثلا اگر عبارت quick fox jumps 
@@ -704,6 +701,11 @@ The quick brown fox leaps
 که هر جزء کوچک‌تر (مثلا کلمات) از عبارت بزرگ‌تر را به صورت token در می‌آورد
 ، در نهایت این token ها را به یک فرم استاندارد نرمالایز می‌کند. این باعث می‌شود تا کلمات شبیه به هم با یکدیگر،
 match شوند.
+
+برای مطالعه بیش‌تر می‌توانید به 
+[این جا](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-overview.html)
+ مراجعه کنید.
+<br>
 
 ## منابع
   - [Elasticsearch Documentation](https://www.elastic.co/guide/index.html)
