@@ -62,7 +62,7 @@ kibana هم سرویسی هست که کاربر به وسیله آن می‌تو
 هر index می‌تواند به 
 shard های کوچک‌تری تقسیم شود
 و همچنین هر کدام از این‌ها هم می‌توانند هر چند تعداد کپی از خود داشته باشند.
-همچنین routing و متعادل‌سازی هم هر دفعه که docomuent جدیدی اضافه می‌شود به طور خودکار انجام می‌شود.
+همچنین routing و متعادل‌سازی هم هر دفعه که document جدیدی اضافه می‌شود به طور خودکار انجام می‌شود.
 - جلوگیری از زیادشدن index ها:
 وقتی چندین کاربر داریم، برای این‌ که هرکدام فقط به فقط document های خود دسترسی داشته باشد،
 مجبور هستیم برای هر یک، یک index تعریف کنیم که می‌تواند موجب زیاد شدن تعداد 
@@ -706,7 +706,8 @@ The quick brown fox leaps
 match شوند.
 
 ## منابع
-  - Elasticsearch Documentation
-  - مستندات آکادمی ستاره
+  - [Elasticsearch Documentation](https://www.elastic.co/guide/index.html)
   - [dzone.com](https://dzone.com/articles/elastic-search-advantages-case-studies-amp-books)
+  - مستندات آکادمی ستاره
+
 </div>
